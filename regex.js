@@ -1,3 +1,4 @@
-let txt = "V-00000000"
+let txt = "E-192836a4"
+const patron = /^(V|E)-\d{1,8}$/
 
-console.log(txt.match(/(V|E)-[1-9]{1,8}/g));
+console.log(patron.test(txt));
