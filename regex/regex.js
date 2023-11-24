@@ -1,4 +1,4 @@
-const patron = /^(V|E)-\d{1,8}$/
+const patron = /^(V|E)-\d{8}$/
 
 function obtener() {
     let txt = document.getElementById("caja").value
