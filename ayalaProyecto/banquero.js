@@ -3,6 +3,13 @@ let m_asignacion = new Array(5);
 let m_necesidades = new Array(5);
 let v_recursos = new Array(3);
 let v_recursosD = new Array(3);
+let count = 0;
+let d = document.getElementsByClassName('demanda');
+let a = document.getElementsByClassName('asig');
+let n = document.getElementsByClassName('nece');
+let vt = document.getElementsByClassName('vTotal');
+let vd = document.getElementsByClassName('vDis');
+let out = document.getElementsByClassName('salida');
 
 for (let i = 0; i < m_demanda.length; i++) {
     m_demanda[i] = new Array(3);
@@ -17,6 +24,7 @@ function rndNum(mayor) {
 function fillVector(vector, num) {
     for (let i = 0; i < vector.length; i++) {
         vector[i] = rndNum(num);
+        vt[i].innerHTML = vector[i];
     }
 }
 
@@ -33,19 +41,22 @@ function fillN(matriz) {
     for (let i = 0; i < matriz.length; i++) {
         for (let j = 0; j < matriz[0].length; j++) {
             matriz[i][j] = m_demanda[i][j] - m_asignacion[i][j];
+            n[count].innerHTML = matriz[i][j];
+            count++;
         }
-
     }
+    count = 0;
 }
 
 function fillD(matriz) {
     for (let i = 0; i < matriz.length; i++) {
         for (let j = 0; j < matriz[0].length; j++) {
             matriz[i][j] = rndNum(v_recursos[j]);
-
+            d[count].innerHTML = matriz[i][j];
+            count++;
         }
-
     }
+    count = 0;
 }
 
 function fillA(matriz) {
@@ -56,9 +67,12 @@ function fillA(matriz) {
             } else {
                 matriz[i][j] = rndNum(4) - 1;
             }
+            a[count].innerHTML = matriz[i][j];
+            count++;
         }
 
     }
+    count = 0;
 }
 
 
@@ -82,6 +96,7 @@ function fillVectorD(vector) {
         }
         vector[i] = v_recursos[i] - acum;
         acum = 0;
+        vd[i].innerHTML = vector[i];
     }
 }
 
@@ -126,8 +141,10 @@ function vaciado() {
     }
 
     if (verSalida == 5) {
+        out[0].innerHTML = 'La simulacion ha concluido en un estado exitoso';
         console.log('====La simulación ha concluido en un estado exitoso====');
     } else {
+        out[0].innerHTML = 'La simulacion ha concluido en un estado no ejecutable';
         console.log('====La simulación ha concluido en un estado no ejecutable====');
     }
 }
@@ -156,6 +173,5 @@ function run() {
     }
 }
 
-run();
 
 
