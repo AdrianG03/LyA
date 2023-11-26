@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/banquero.js" defer></script>
     <link rel="stylesheet" href="/banquero.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vina+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <title>ALGORITMO BANQUERO</title>
 </head>
 
@@ -17,6 +17,7 @@
     <div id="eso">
         <!-- Demanda -->
         <div id="matriz">
+            <p class="nameM">MATRIZ DEMANDA</p>
             <div class="demanda"></div>
             <div class="demanda"></div>
             <div class="demanda"></div>
@@ -35,6 +36,7 @@
         </div>
         <!-- Asignación -->
         <div id="matriz">
+            <p class="nameM">MATRIZ ASIGNACIÓN</p>
             <div class="asig"></div>
             <div class="asig"></div>
             <div class="asig"></div>
@@ -53,6 +55,7 @@
         </div>
         <!-- Necesidades -->
         <div id="matriz">
+            <p class="nameM">MATRIZ NECESIDAD</p>
             <div class="nece"></div>
             <div class="nece"></div>
             <div class="nece"></div>
@@ -73,12 +76,14 @@
 
     <div id="eso">
         <div id="vector">
+            <p class="nameM">VECTOR RECURSOS</p>
             <div class="vTotal"></div>
             <div class="vTotal"></div>
             <div class="vTotal"></div>
         </div>
-        <button onclick="run()">INICIAR</button>
+        <button class='btnRun' onclick="run()">INICIAR</button>
         <div id="vector">
+            <p class="nameM">VECTOR DISPONIBLES</p>
             <div class="vDis"></div>
             <div class="vDis"></div>
             <div class="vDis"></div>

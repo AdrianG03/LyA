@@ -1,19 +1,20 @@
 body {
-    background-color: #89ac76;
+    background-image: radial-gradient(circle farthest-corner at 92.3% 71.5%, rgba(83, 138, 214, 1) 0%, rgba(134, 231, 214, 1) 90%);
+    background-size: 100% 130%;
 }
 
 #titulo {
     text-align: center;
     font-size: 50px;
     letter-spacing: 4px;
-    font-family: 'Vina Sans';
+    font-family: 'Comfortaa';
     color: #000000;
 }
 
 h2 {
     text-align: center;
     letter-spacing: 4px;
-    font-family: 'Vina Sans';
+    font-family: 'Comfortaa';
     color: #000000;
 }
 
@@ -38,14 +39,19 @@ h2 {
 .nece,
 .vTotal,
 .vDis {
-    background-color: #e9ac73;
+    background-color: #ffffff;
     border: 4px solid #000000;
     border-radius: 10px;
     padding: 10px;
-    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
     width: 30px;
     height: 30px;
     float: left;
+    font-family: 'Comfortaa';
+    text-align: center;
+    font-size: 30px;
 }
 
 #eso {
@@ -56,8 +62,25 @@ h2 {
 
 .salida {
     text-align: center;
-    font-size: 50px;
-    letter-spacing: 4px;
-    font-family: 'Vina Sans';
+    font-size: 40px;
+    font-family: 'Comfortaa';
     color: #000000;
+}
+
+.nameM {
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Comfortaa';
+    color: #000000;
+}
+
+.btnRun {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 2px solid #000000;
+    font-family: 'Comfortaa';
+    color: #000000;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
 }

@@ -119,6 +119,7 @@ async function vaciado() {
         for (let i = 0; i < m_necesidades.length; i++) {
             if (m_necesidades[i][0] != 0 && m_necesidades[i][1] != 0 && m_necesidades[i][2] != 0) {
                 for (let j = 0; j < m_necesidades[0].length; j++) {
+                    //FIXME - Revisar para que entre a la condición
                     if (m_necesidades[i][j] <= v_recursosD[j]) {
                         cont++;
                         if (cont == 3) {
@@ -145,16 +146,16 @@ async function vaciado() {
     }
 
     if (verSalida == 5) {
-        out[0].innerHTML = 'La simulacion ha concluido en un estado exitoso';
+        out[0].innerHTML = 'ESTADO EXITOSO';
         console.log('====La simulación ha concluido en un estado exitoso====');
     } else {
-        out[0].innerHTML = 'La simulacion ha concluido en un estado no ejecutable';
+        out[0].innerHTML = 'ESTADO NO EJECUTABLE';
         console.log('====La simulación ha concluido en un estado no ejecutable====');
     }
 }
 
 async function run() {
-    out[0].innerHTML = 'La simulacion ha iniciado';
+    out[0].innerHTML = 'INICIANDO...';
     let flag = 0;
     while (flag == 0) {
         let maxProcess = 10;
@@ -174,7 +175,7 @@ async function run() {
         } else {
             flag++;
             await pausar(1000);
-            out[0].innerHTML = 'Comprobando...';
+            out[0].innerHTML = 'COMPROBANDO...';
             await pausar(3000);
             vaciado();
         }
