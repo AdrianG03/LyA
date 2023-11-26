@@ -23,7 +23,7 @@ function rndNum(mayor) {
 
 function fillVector(vector, num) {
     for (let i = 0; i < vector.length; i++) {
-        vector[i] = rndNum(num);
+        vector[i] = rndNum(num) + 5;
         vt[i].innerHTML = vector[i];
     }
 }
@@ -74,7 +74,6 @@ function fillA(matriz) {
     }
     count = 0;
 }
-
 
 function printMatriz(matriz, name) {
     matrizSrt = '';
