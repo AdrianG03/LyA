@@ -119,14 +119,12 @@ async function vaciado() {
         for (let i = 0; i < m_necesidades.length; i++) {
             if (m_necesidades[i][0] != 0 && m_necesidades[i][1] != 0 && m_necesidades[i][2] != 0) {
                 for (let j = 0; j < m_necesidades[0].length; j++) {
-                    //FIXME - Revisar para que entre a la condición
                     if (m_necesidades[i][j] <= v_recursosD[j]) {
                         cont++;
                         if (cont == 3) {
                             banFila = i;
                         }
                     }
-
                 }
             }
 
@@ -146,7 +144,7 @@ async function vaciado() {
     }
 
     if (verSalida == 5) {
-        out[0].innerHTML = 'ESTADO EXITOSO';
+        out[0].innerHTML = 'ESTADO EXITOSO ';
         console.log('====La simulación ha concluido en un estado exitoso====');
     } else {
         out[0].innerHTML = 'ESTADO NO EJECUTABLE';
@@ -181,6 +179,3 @@ async function run() {
         }
     }
 }
-
-
-
