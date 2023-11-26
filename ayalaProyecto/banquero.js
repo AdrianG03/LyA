@@ -17,13 +17,17 @@ for (let i = 0; i < m_demanda.length; i++) {
     m_necesidades[i] = new Array(3);
 }
 
+function pausar(milisegundos) {
+    return new Promise(resolve => setTimeout(resolve, milisegundos));
+}
+
 function rndNum(mayor) {
     return 1 + (Math.floor(Math.random() * mayor));
 }
 
 function fillVector(vector, num) {
     for (let i = 0; i < vector.length; i++) {
-        vector[i] = rndNum(num) + 5;
+        vector[i] = rndNum(num) + 10;
         vt[i].innerHTML = vector[i];
     }
 }
@@ -106,7 +110,7 @@ function resetFila(matriz, fila) {
     }
 }
 
-function vaciado() {
+async function vaciado() {
     let verSalida = 0;
     let cont = 0;
     let banFila = 0;
@@ -128,6 +132,7 @@ function vaciado() {
             if (cont == 3) {
                 resetFila(m_demanda, banFila);
                 resetFila(m_asignacion, banFila);
+                await pausar(3000);
                 fillN(m_necesidades);
                 fillVectorD(v_recursosD);
                 console.log('-----------------------------------------');
@@ -148,7 +153,8 @@ function vaciado() {
     }
 }
 
-function run() {
+async function run() {
+    out[0].innerHTML = 'La simulacion ha iniciado';
     let flag = 0;
     while (flag == 0) {
         let maxProcess = 10;
@@ -167,6 +173,9 @@ function run() {
             console.log('El sistema no puede tener solución con los parámetros proporcionados');
         } else {
             flag++;
+            await pausar(1000);
+            out[0].innerHTML = 'Comprobando...';
+            await pausar(3000);
             vaciado();
         }
     }
