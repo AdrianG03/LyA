@@ -106,7 +106,6 @@ function fillVectorD(vector) {
 function resetFila(matriz, fila) {
     for (let j = 0; j < matriz[0].length; j++) {
         matriz[fila][j] = 0;
-
     }
 }
 
@@ -120,11 +119,15 @@ async function vaciado() {
             if (m_necesidades[i][0] != 0 && m_necesidades[i][1] != 0 && m_necesidades[i][2] != 0) {
                 for (let j = 0; j < m_necesidades[0].length; j++) {
                     if (m_necesidades[i][j] <= v_recursosD[j]) {
+                        console.log("entro a la condicion" + m_necesidades[i][j] + "<=" + v_recursosD[j] + "true");
                         cont++;
                         if (cont == 3) {
                             banFila = i;
                         }
+                    } else {
+                        console.log("no entro a la condicion" + m_necesidades[i][j] + "<=" + v_recursosD[j] + "false");
                     }
+                    console.log(m_necesidades[i][j]);
                 }
             }
 
