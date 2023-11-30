@@ -113,21 +113,16 @@ async function vaciado() {
     let verSalida = 0;
     let cont = 0;
     let banFila = 0;
-    console.log('Entrada al vaciado con estas matrices');
     for (let x = 0; x < m_necesidades.length; x++) {
         for (let i = 0; i < m_necesidades.length; i++) {
-            if (m_necesidades[i][0] != 0 && m_necesidades[i][1] != 0 && m_necesidades[i][2] != 0) {
+            if (m_necesidades[i][0] > 0 || m_necesidades[i][1] > 0 || m_necesidades[i][2] > 0) {
                 for (let j = 0; j < m_necesidades[0].length; j++) {
                     if (m_necesidades[i][j] <= v_recursosD[j]) {
-                        console.log("entro a la condicion" + m_necesidades[i][j] + "<=" + v_recursosD[j] + "true");
                         cont++;
                         if (cont == 3) {
                             banFila = i;
                         }
-                    } else {
-                        console.log("no entro a la condicion" + m_necesidades[i][j] + "<=" + v_recursosD[j] + "false");
                     }
-                    console.log(m_necesidades[i][j]);
                 }
             }
 
