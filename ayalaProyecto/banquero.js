@@ -17,6 +17,43 @@ for (let i = 0; i < m_demanda.length; i++) {
     m_necesidades[i] = new Array(3);
 }
 
+function pintarCelda(fila, color) {
+    if (fila == 0) {
+        n[0].style.backgroundColor = color;
+        n[1].style.backgroundColor = color;
+        n[2].style.backgroundColor = color;
+    }
+    if (fila == 1) {
+        n[3].style.backgroundColor = color;
+        n[4].style.backgroundColor = color;
+        n[5].style.backgroundColor = color;
+    }
+    if (fila == 2) {
+        n[6].style.backgroundColor = color;
+        n[7].style.backgroundColor = color;
+        n[8].style.backgroundColor = color;
+    }
+    if (fila == 3) {
+        n[9].style.backgroundColor = color;
+        n[10].style.backgroundColor = color;
+        n[11].style.backgroundColor = color;
+    }
+    if (fila == 4) {
+        n[12].style.backgroundColor = color;
+        n[13].style.backgroundColor = color;
+        n[14].style.backgroundColor = color;
+    }
+}
+
+function resetColor() {
+    for (let i = 0; i < 15; i++) {
+        n[i].style.backgroundColor = '#ffffff';
+    }
+    for (let i = 0; i < 3; i++) {
+        vd[i].style.backgroundColor = '#ffffff';
+    }
+}
+
 function pausar(milisegundos) {
     return new Promise(resolve => setTimeout(resolve, milisegundos));
 }
@@ -127,6 +164,7 @@ async function vaciado() {
             }
 
             if (cont == 3) {
+                pintarCelda(banFila, '#81F79F');
                 resetFila(m_demanda, banFila);
                 resetFila(m_asignacion, banFila);
                 await pausar(3000);
@@ -147,11 +185,16 @@ async function vaciado() {
     } else {
         out[0].innerHTML = 'ESTADO NO EJECUTABLE';
         console.log('====La simulación ha concluido en un estado no ejecutable====');
+        for (let i = 0; i < 3; i++) {
+            vd[i].style.backgroundColor = '#F7D358';
+        }
     }
 }
 
 async function run() {
     out[0].innerHTML = 'INICIANDO...';
+    resetColor();
+
     let flag = 0;
     while (flag == 0) {
         let maxProcess = 10;
